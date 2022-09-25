@@ -14,6 +14,8 @@ class Calculator extends React.Component {
 		this.subtract = this.subtract.bind(this);
 		this.and = this.and.bind(this);
 		this.or = this.or.bind(this);
+		this.sl = this.sl.bind(this);
+		this.sr = this.sr.bind(this);
 	}
 
 	updateValue(id, val) {
@@ -40,6 +42,14 @@ class Calculator extends React.Component {
 		this.setState({ result: this.state.input1 | this.state.input2 });
 	}
 
+	sl() {
+		this.setState({ result: this.state.input1 << this.state.input2 });
+	}
+
+	sr() {
+		this.setState({ result: this.state.input1 >> this.state.input2 });
+	}
+
 	render() {
 		return (
 			<div className="calculator">
@@ -49,10 +59,24 @@ class Calculator extends React.Component {
 				<CalculatorInputField id="2" action={this.updateValue} />
 
 				<div className="operators">
-					<button className="operatorButton" onClick={this.add}>+</button>
-					<button className="operatorButton" onClick={this.subtract}>-</button>
-					<button className="operatorButton" onClick={this.and}>AND</button>
-					<button className="operatorButton" onClick={this.or}>OR</button>
+					<button className="operatorButton" onClick={this.add}>
+						+
+					</button>
+					<button className="operatorButton" onClick={this.subtract}>
+						-
+					</button>
+					<button className="operatorButton" onClick={this.and}>
+						AND
+					</button>
+					<button className="operatorButton" onClick={this.or}>
+						OR
+					</button>
+					<button className="operatorButton" onClick={this.sl}>
+						SL
+					</button>
+					<button className="operatorButton" onClick={this.sr}>
+						SR
+					</button>
 				</div>
 
 				<CalculatorOutputField result={this.state.result} />
