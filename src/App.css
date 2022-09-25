@@ -1,0 +1,62 @@
+body {
+	background-color: #2E3440;
+}
+
+.calculator {
+	color: #D8DEE9;
+	text-align: center;
+}
+
+.numberInputField {
+	background-color: #4c566a;
+	border: 2px solid;
+	border-color: #6D8AB3;
+	color: #D8DEE9;
+	font-family: monospace;
+	font-size: 20px;
+	margin: 8px;
+	text-align: right;
+}
+
+.baseInputField {
+	background-color: #4c566a;
+	border: 2px solid;
+	border-color: #6D8AB3;
+	color: #D8DEE9;
+	font-family: monospace;
+	font-size: 20px;
+	margin: 8px;
+	text-align: right;
+}
+
+.operators {
+	padding: 15px;
+	column-gap: 20px;
+}
+
+.operatorButton {
+	background-color: #6D8AB3;
+	border: none;
+	color: #D8DEE9;
+	font-size: 16px;
+	margin: 5px;
+	padding: 10px;
+	text-align: center;
+	appearance: none;
+}
+
+.operatorButton:hover {
+	background-color: #6D8AB3;
+	border: none;
+	color: #ECEFF4;
+	font-size: 16px;
+	margin: 5px;
+	padding: 10px;
+	text-align: center;
+}
+
+.outputField {
+	font-family: monospace;
+	font-size: 24px;
+	text-align: center;
+}
