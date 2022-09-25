@@ -2,11 +2,12 @@ import React from "react";
 
 import CalculatorInputField from "./CalculatorInputField.js";
 import CalculatorOutputField from "./CalculatorOutputField.js";
+import BaseNumber from "./Number.js";
 
 class Calculator extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { input1: 0, input2: 0, result: 0 };
+		this.state = { input1: 0, input2: 0, result: new BaseNumber("0") };
 
 		this.updateValue = this.updateValue.bind(this);
 
@@ -27,27 +28,39 @@ class Calculator extends React.Component {
 	}
 
 	add() {
-		this.setState({ result: this.state.input1 + this.state.input2 });
+		this.setState({
+			result: new BaseNumber(this.state.input1 + this.state.input2),
+		});
 	}
 
 	subtract() {
-		this.setState({ result: this.state.input1 - this.state.input2 });
+		this.setState({
+			result: new BaseNumber(this.state.input1 - this.state.input2),
+		});
 	}
 
 	and() {
-		this.setState({ result: this.state.input1 & this.state.input2 });
+		this.setState({
+			result: new BaseNumber(this.state.input1 & this.state.input2),
+		});
 	}
 
 	or() {
-		this.setState({ result: this.state.input1 | this.state.input2 });
+		this.setState({
+			result: new BaseNumber(this.state.input1 | this.state.input2),
+		});
 	}
 
 	sl() {
-		this.setState({ result: this.state.input1 << this.state.input2 });
+		this.setState({
+			result: new BaseNumber(this.state.input1 << this.state.input2),
+		});
 	}
 
 	sr() {
-		this.setState({ result: this.state.input1 >> this.state.input2 });
+		this.setState({
+			result: new BaseNumber(this.state.input1 >> this.state.input2),
+		});
 	}
 
 	render() {

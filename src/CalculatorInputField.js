@@ -1,6 +1,6 @@
 import React from "react";
 
-import Number from "./Number.js";
+import BaseNumber from "./Number.js";
 
 class CalculatorInputField extends React.Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ class CalculatorInputField extends React.Component {
 
 	handleChange(e) {
 		if (e.target.name === "number") {
-			var number = new Number(e.target.value, this.state.base).getValue();
+			var number = new BaseNumber(e.target.value, this.state.base).getValue();
 			this.props.action(this.props.id, number);
 		} else if (e.target.name === "base") {
 			document.getElementsByName("number")[this.props.id - 1].value = "";
